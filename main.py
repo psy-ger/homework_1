@@ -40,14 +40,8 @@ class Rectangle:
         self.height = new_height
 
 
-if __name__ == "__main__":
-    # Task 1: Circle area
-    radius: float = float(input("Enter the radius of the circle: "))
-    area: float = calculate_circle_area(radius)
-    print(f"The area of the circle with radius {radius} is {area:.2f}")
-
-    # Task 2: Rectangle class tests (using assert)
-    rect: Rectangle = Rectangle(5, 10)
+def test_rectangle() -> None:
+    rect = Rectangle(5, 10)
     assert rect.width == 5
     assert rect.height == 10
     assert rect.area() == 50
@@ -55,9 +49,17 @@ if __name__ == "__main__":
     assert rect.is_square() is False
 
     rect.resize(7, 7)
-    assert rect.width == 7
-    assert rect.height == 7
+    assert rect.is_square() is True
     assert rect.area() == 49
     assert rect.perimeter() == 28
-    assert rect.is_square() is True
+
+
+if __name__ == "__main__":
+    # Task 1: Circle area
+    radius: float = float(input("Enter the radius of the circle: "))
+    area: float = calculate_circle_area(radius)
+    print(f"The area of the circle with radius {radius} is {area:.2f}")
+
+    # Task 2: Rectangle class tests (using assert)
+    test_rectangle()
     print("All rectangle tests passed.")
