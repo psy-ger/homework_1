@@ -53,4 +53,4 @@ if __name__ == "__main__":
     assert rect.area() == 49
     assert rect.perimeter() == 28
     assert rect.is_square() is True
-    
+    print("All rectangle tests passed.")
